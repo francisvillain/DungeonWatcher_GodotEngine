@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var health = 1
-var damage = 0
+var damage = 1
 var direction = Vector2()
 var speed = 220.0
 var colliders : Dictionary = {
