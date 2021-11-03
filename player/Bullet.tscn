@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://bullet_pistol_centre.png" type="Texture" id=2]
+[ext_resource path="res://light.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.3784, 2.5396 )
+
+[node name="Bullet" type="KinematicBody2D"]
+scale = Vector2( 4, 4 )
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 1 )
+speed = 610.0
+check_collider = "enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 0.678431, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+texture_scale = 0.5
+shadow_enabled = true
